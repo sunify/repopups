@@ -1,6 +1,6 @@
 const path = require('path');
 
-const cssLoader = 'css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader';
+const cssLoader = 'css-loader!postcss-loader';
 
 module.exports = [
   { test: /\.css$/,

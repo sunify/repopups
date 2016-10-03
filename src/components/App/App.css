@@ -1,0 +1,91 @@
+.App {
+  position: relative;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.App-body {
+  padding-top: 100px;
+  padding-bottom: 250px;
+  background-image: linear-gradient(#DADADA, #6A6B6B);
+  box-shadow: 0 0 10px 1px #000;
+  border-radius: 4px 0 4px 4px;
+}
+
+.App-tabs {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 10px 10px 0;
+  height: 100px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.App-tab {
+  -webkit-appearance: none;
+  font-size: 3rem;
+  font-weight: bold;
+
+  position: relative;
+
+  padding: 25px 100px 0;
+
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+
+  border: 0;
+  color: #6B6A6A;
+  text-shadow: 0 0 3px rgba(107,106,106,0.3);
+}
+
+.App-tab:first-child {
+  flex: 2;
+  padding-left: 140px;
+  text-align: left;
+}
+
+.App-tab:last-child {
+  flex: 1;
+  background-image: linear-gradient(#EBEBEB, #DADADA);
+  border-radius: 0 4px 0 0;
+  box-shadow: 0 1px 10px 1px #000;
+  color: #000;
+  text-shadow: 0 5px 10px #000;
+}
+
+.App-tab:last-child::before,
+.App-tab:last-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  transform: translateZ(0) skewX(-40deg);
+  background-image: linear-gradient(#EBEBEB, #DADADA);
+}
+
+.App-tab:last-child::before {
+  width: 100px;
+  left: -40px;
+  box-shadow: -1px 1px 4px 0px #000;
+}
+
+.App-tab:last-child::after {
+  width: 20px;
+  left: 50px;
+}
+
+.App-title {
+  font-size: 3.6rem;
+  font-weight: bold;
+
+  margin-bottom: 170px;
+
+  text-align: center;
+
+  color: #565656;
+  text-shadow: 0 2px 1px #DEDEDE;
+}

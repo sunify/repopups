@@ -11,9 +11,7 @@ module.exports = [
     include: [path.join(__dirname, 'src')],
     loader: 'babel',
   },
-  { test: /\.woff2$/, loader: 'file' },
-  { test: /\.woff$/, loader: 'file' },
-  { test: /\.png$/, loader: 'file' },
-  { test: /\.gif$/, loader: 'file' },
-  { test: /\.jpg$/, loader: 'file' },
+  { test: /\.png$/, loader: 'url?limit=10000' },
+  { test: /\.gif$/, loader: 'url?limit=10000' },
+  { test: /\.jpg$/, loader: 'url?limit=10000' },
 ];

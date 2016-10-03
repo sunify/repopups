@@ -37,7 +37,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
-      hash: true,
+      inject: false,
     }),
   ],
 };

@@ -30,14 +30,13 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      inject: true,
+      template: 'index.html',
+      hash: true,
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ru/),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
-        API_SERVER_URL: JSON.stringify(process.env.API_SERVER_URL),
       },
     }),
   ],

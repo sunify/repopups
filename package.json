@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create-component": "node scripts/create-component",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "author": "",
   "license": "ISC",

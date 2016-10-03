@@ -3,8 +3,6 @@ const path = require('path');
 const loaders = require('./webpack.loaders');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-console.log('Build for', process.env.API_SERVER_URL); //eslint-disable-line
-
 module.exports = {
   entry: {
     index: [
@@ -22,7 +20,7 @@ module.exports = {
   },
   devtool: '#source-maps',
   module: {
-    loaders: loaders(false),
+    loaders: loaders, // eslint-disable-line object-shorthand
   },
   postcss: [
     require('autoprefixer'),
@@ -32,15 +30,14 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
-        API_SERVER_URL: JSON.stringify(process.env.API_SERVER_URL),
       },
     }),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin(),
     new HtmlWebpackPlugin({
-      title: 'Hero',
+      template: 'src/index.html',
+      filename: 'index.html',
       hash: true,
-      template: 'index-template.ejs',
     }),
   ],
 };

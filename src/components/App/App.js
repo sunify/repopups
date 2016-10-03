@@ -15,14 +15,28 @@ export default class App extends React.Component {
     selectedPopup: '0',
   };
 
+  handleOpenClick() {
+    const { openAllPopups, selectedPopup } = this.state;
+    const { openPopups } = this.props;
+    if (openAllPopups) {
+      openPopups(
+        [popups[selectedPopup]]
+          .concat(popups.slice(0, selectedPopup))
+          .concat(popups.slice(selectedPopup + 1))
+      );
+    } else {
+      openPopups([popups[selectedPopup]]);
+    }
+  }
+
   render() {
     const { openAllPopups, selectedPopup } = this.state;
 
     return (
       <div className="App">
         <div className="App-tabs">
-          <a className="App-tab">Users</a>
-          <a className="App-tab">Statistics</a>
+          <a className="App-tab"><span>Users</span></a>
+          <a className="App-tab"><span>Statistics</span></a>
         </div>
         <div className="App-body">
           <h1 className="App-title">
@@ -38,12 +52,14 @@ export default class App extends React.Component {
             </Checkbox>
             <div className="App-form-row">
               <Select
-                style={{ width: 400 }}
+                style={{ maxWidth: 400 }}
                 value={selectedPopup}
                 options={makePopupOptions(popups)}
                 onChange={selectedPopup => this.setState({ selectedPopup })}
               />
-              <Button>
+              <Button
+                onClick={() => this.handleOpenClick()}
+              >
                 Open
               </Button>
             </div>

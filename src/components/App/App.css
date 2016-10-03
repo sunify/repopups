@@ -1,13 +1,13 @@
 .App {
   position: relative;
   margin: 40px auto;
+  padding: 0 10px;
   width: 100%;
   max-width: 1200px;
 }
 
 .App-body {
-  padding-top: 100px;
-  padding-bottom: 250px;
+  padding: 100px 30px 250px;
   background-image: linear-gradient(#DADADA, #6A6B6B);
   box-shadow: 0 0 10px 1px #000;
   border-radius: 4px 0 4px 4px;
@@ -40,6 +40,11 @@
   border: 0;
   color: #6B6A6A;
   text-shadow: 0 0 3px rgba(107,106,106,0.3);
+}
+
+.App-tab span {
+  position: relative;
+  z-index: 1;
 }
 
 .App-tab:first-child {
@@ -103,4 +108,63 @@
 
 .App-form-row > * + * {
   margin-left: 30px;
+}
+
+
+@media screen and (max-width: 680px) {
+  .App-tab {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .App-tab:first-child {
+    flex: 1;
+    padding-left: 20px;
+  }
+
+  .App-form-row {
+    display: block;
+  }
+
+  .App-form-row > * + * {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .App-body {
+    padding: 30px 30px 50px;
+  }
+
+  .App-title {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .App {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .App-tabs {
+    height: 60px;
+  }
+
+  .App-tab {
+    font-size: 18px;
+    padding-top: 10px;
+  }
+
+  .App-tab:first-child {
+    text-align: center;
+  }
+
+  .App-tab:last-child {
+    border-radius: 4px 4px 0 0;
+  }
+
+  .App-tab:last-child::before,
+  .App-tab:last-child::after {
+    display: none;
+  }
 }

@@ -19,7 +19,7 @@
 }
 
 .Checkbox-icon--checked {
-  background-color: #cf0;
+  background-image: url(./flag.png);
 }
 
 .Checkbox-label {

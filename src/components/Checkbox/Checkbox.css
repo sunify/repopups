@@ -1,0 +1,27 @@
+.Checkbox {
+  -webkit-user-select: none;
+  display: inline-flex;
+  align-items: center;
+  color: #505050;
+}
+
+.Checkbox input {
+  display: none;
+}
+
+.Checkbox-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+
+  background-color: #FF4DA8;
+  border: 1px solid #FF0492;
+}
+
+.Checkbox-icon--checked {
+  background-color: #cf0;
+}
+
+.Checkbox-label {
+  font-size: 2.5rem;
+}
